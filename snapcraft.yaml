@@ -1,0 +1,23 @@
+name: linuxcounter
+version: 1.0.1
+summary: Flutter Demo Linux Counter Application
+description: A demo of Counter Application using Flutter for Linux
+confinement: strict
+base: core18
+grade: stable
+icon: snap/gui/icon.png
+
+
+apps:
+   counter:
+     command: linuxcounter
+     extensions: [flutter-master]
+     plugs:
+       - network
+       - desktop
+
+parts:
+  counter:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
